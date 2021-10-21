@@ -8,3 +8,32 @@ const membersTeam = [
     {name: "Barbara Ramos", role: "Graphic Designer", image: "barbara-ramos-graphic-designer.jpg"}
 ]
 
+const teamContainer = document.querySelector(".team-container");
+
+for (let i= 0; i < membersTeam.length; i++){
+
+    const singleMember = membersTeam[i];
+    console.log(singleMember)
+
+    let memberName = singleMember.name;
+    console.log(memberName);
+
+    let memberRole = singleMember.role;
+    console.log(memberRole);
+
+    let memberImage = singleMember.image;
+    console.log(memberImage);
+
+    teamContainer.innerHTML += `<div class="team-card">
+                                    <div class="card-image">
+                                        <img
+                                            src="img/${memberImage}"
+                                            alt="${memberName}"
+                                        />
+                                    </div>
+                                    <div class="card-text">
+                                        <h3>${memberName}</h3>
+                                        <p>${memberRole}</p>
+                                    </div>
+                                </div>`
+}
